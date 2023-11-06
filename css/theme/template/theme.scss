@@ -321,6 +321,14 @@
 	color: var(--r-link-color);
 }
 
+.reveal section[left-align] {
+	text-align: left;
+}
+
+.reveal section ul li {
+	line-height: 1.75;
+}
+
 /*********************************************
  * PRINT BACKGROUND
  *********************************************/
