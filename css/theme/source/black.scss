@@ -26,7 +26,6 @@ $mainFont: 'Source Sans Pro', Helvetica, sans-serif;
 $headingFont: 'Source Sans Pro', Helvetica, sans-serif;
 $headingTextShadow: none;
 $headingLetterSpacing: normal;
-$headingTextTransform: uppercase;
 $headingFontWeight: 600;
 $linkColor: #42affa;
 $linkColorHover: lighten( $linkColor, 15% );
@@ -43,4 +42,8 @@ $heading4Size: 1.00rem;
 
 // Theme template ------------------------------
 @import "../template/theme";
+// ---------------------------------------------
+
+// Import utility classes ----------------------
+@import "../template/colors.scss";
 // ---------------------------------------------
