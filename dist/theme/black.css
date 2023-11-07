@@ -349,6 +349,67 @@ section.has-light-background, section.has-light-background h1, section.has-light
   color: var(--r-link-color);
 }
 
+.reveal section[left-align] {
+  text-align: left;
+}
+
+img[alt*="1rem"] {
+  width: 1rem;
+}
+
+img[alt*="2rem"] {
+  width: 2rem;
+}
+
+img[alt*="4rem"] {
+  width: 4rem;
+}
+
+img[alt*="8rem"] {
+  width: 8rem;
+}
+
+img[alt*="16rem"] {
+  width: 16rem;
+}
+
+img[alt*="32rem"] {
+  width: 32rem;
+}
+
+img[alt*="64rem"] {
+  width: 64rem;
+}
+
+img[alt*="128rem"] {
+  width: 128rem;
+}
+
+.reveal section[image-align-right] p {
+  position: relative;
+  width: 100%;
+}
+.reveal section[image-align-right] p:has(img) {
+  z-index: 999;
+  width: 100%;
+  position: absolute;
+  text-align: right;
+}
+.reveal section[image-align-right] p:has(img) img {
+  position: relative;
+  float: right;
+}
+
+.w-full {
+  background-color: red;
+  width: 100%;
+  position: relative;
+}
+
+.reveal section ul li {
+  line-height: 1.75;
+}
+
 /*********************************************
  * PRINT BACKGROUND
  *********************************************/
