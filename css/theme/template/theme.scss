@@ -325,6 +325,31 @@
 	text-align: left;
 }
 
+.reveal section[image-align-right] {
+	// background: red;
+	p {
+		position: relative;
+		width: 100%;
+		&:has(img) {
+			z-index: 999;
+			width: 100%;
+			position: absolute;
+			text-align: right;
+			img {
+				position: relative;
+				float: right;
+			}
+		}
+	}
+}
+
+.w-full {
+	background-color: red;
+	width: 100%;
+	position: relative;
+}
+
+
 .reveal section ul li {
 	line-height: 1.75;
 }
