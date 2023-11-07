@@ -325,6 +325,14 @@
 	text-align: left;
 }
 
+$imageSizes: 1rem, 2rem, 4rem, 8rem, 16rem, 32rem, 64rem, 128rem;
+
+@each $imageSize in $imageSizes {
+	img[alt*="#{$imageSize}"] {
+		width: $imageSize;
+	}
+}
+
 .reveal section[image-align-right] {
 	// background: red;
 	p {
