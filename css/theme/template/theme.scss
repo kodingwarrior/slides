@@ -357,6 +357,20 @@ $imageSizes: 1rem, 2rem, 4rem, 8rem, 16rem, 32rem, 64rem, 128rem;
 	position: relative;
 }
 
+.reveal section[data-chapter-context] {
+	height: 100vh;
+	text-align: left;
+
+	&:before {
+		content: attr(data-chapter-context);
+		font-style: italic;
+		font-size: 1.5rem;
+	}
+
+	h1 {
+		margin-top: 1.5rem;
+	}
+}
 
 .reveal section ul li {
 	line-height: 1.75;
