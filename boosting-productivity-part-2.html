@@ -73,6 +73,57 @@
 					![생산성으로 퀀텀점프하기 part 1](https://storage.googleapis.com/memedex-bucket/boosting-productivity-part-1-with-comment.png)
 					</script>
 				</section>
+				<section data-transition="fade" data-chapter-context="Chapter 1 : 의미론 단위로 많은 일들을 쳐내기">
+					  <h1>와우 친구들 빡빡이 아저씨야</h1>
+					  <center>
+					  <div class="mermaid">
+						<pre>
+						  %%{init: {'theme': 'dark', 'themeVariables': { 'darkMode': true }}}%%
+						  flowchart TD
+							A[Start]:::active --> B{Is it?};
+							B -- Yes --> C[OK];
+							C --> D[Rethink];
+							D --> B;
+							B -- No ----> E[End];
+							classDef active fill:#f96
+						</pre>
+					  </div>
+					  </center>
+				</section>
+				<section data-transition="fade" data-chapter-context="Chapter 1 : 의미론 단위로 많은 일들을 쳐내기">
+					  <h1>와우 친구들 빡빡이 아저씨야</h1>
+					  <center>
+					  <div class="mermaid">
+						<pre>
+						  %%{init: {'theme': 'dark', 'themeVariables': { 'darkMode': true }}}%%
+						  flowchart TD
+							A[Start] --> B{Is it?};
+							B:::active -- Yes --> C[OK];
+							C --> D[Rethink];
+							D --> B;
+							B -- No ----> E[End];
+							classDef active fill:#f96
+						</pre>
+					  </div>
+					  </center>
+				</section>
+				<section data-transition="fade" data-chapter-context="Chapter 1 : 의미론 단위로 많은 일들을 쳐내기">
+					  <h1>와우 친구들 빡빡이 아저씨야</h1>
+					  <center>
+					  <div class="mermaid">
+						<pre>
+						  %%{init: {'theme': 'dark', 'themeVariables': { 'darkMode': true }}}%%
+						  flowchart TD
+							A[Start] --> B{Is it?};
+							B -- Yes --> C[OK];
+							C:::active --> D[Rethink];
+							D --> B;
+							B -- No ----> E[End];
+							classDef active fill:#f96
+						</pre>
+					  </div>
+					  </center>
+				</section>
 				<section data-markdown left-align>
 					><script type="text/template">
 					# 이번 발표에서 다룰 내용
@@ -531,6 +582,7 @@ Reveal.on( 'customevent', function() {
 		<script src="plugin/search/search.js"></script>
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/mermaid/mermaid.js"></script>
 		<script>
 
 			// Also available as an ES module, see:
@@ -542,7 +594,7 @@ Reveal.on( 'customevent', function() {
 				hash: true,
 
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight, RevealMermaid ]
 			});
 
 		</script>
