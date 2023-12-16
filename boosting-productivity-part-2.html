@@ -79,7 +79,7 @@
 
 					* Chapter 1 : 의미론 단위로 많은 일들을 쳐내기 <!-- .element: class="fragment" data-fragment-index="1" -->
 					* Chapter 2 : 에디터 자체에서 제공하는 기능을 잘 활용하기<!-- .element: class="fragment" data-fragment-index="2" --> 
-					* Chapter 3 : CLI 프로그램과 친해지기 <!-- .element: class="fragment" data-fragment-index="3" -->
+					* Chapter 3 : CLI 환경과 친해지기 <!-- .element: class="fragment" data-fragment-index="3" -->
 					* Chapter 4 : 나만의 맞춤형 환경 구성하기  <!-- .element: class="fragment" data-fragment-index="4" -->
 					</script>
 				</section>
@@ -211,10 +211,180 @@
 				</section>
 				<section data-markdown data-separator="^\n---\n$" data-chapter-context="Chapter 2 : 에디터 자체에서 제공해주는 기능을 잘 활용하기">
 				</section>
-				<section data-markdown>
+				<section data-markdown data-separator="^\n---\n$" data-transition="fade">
 				# Chapter 3
-				# CLI 프로그램과 친해지기
+				# CLI 환경과 친해지기
+
+				---
+
+				# Chapter 3 
+				# CLI 환경과 친해지기 
+				# Terminal / Neovim
 				</section>
+				<section data-markdown data-separator="^\n---\n$" data-chapter-context="Chapter 3 : CLI 환경과 친해지기" data-transition="fade">
+				# Neovim을 키는 과정 
+
+				* Step 1 : 터미널 에뮬레이터를 킨다
+				* Step 2 : 명령어를 타이핑할 수 있는 쉘이 열린다.
+				* Step 3 : 작업하고자 하는 프로젝트의 경로를 찾아간다.
+				* Step 4 : 현재 위치한 경로를 nvim 커맨드로 연다.
+
+				---
+
+				# Neovim을 키는 과정 
+
+				* Step 1 : 터미널 에뮬레이터를 킨다 (iterm, konsole, wezterm, ...)
+				* Step 2 : 명령어를 타이핑할 수 있는 쉘이 열린다. (zsh, bash)
+				* Step 3 : 작업하고자 하는 프로젝트의 경로를 찾아간다. (cd xxxx)
+				* Step 4 : 현재 위치한 경로를 nvim 커맨드로 연다. (nvim .)
+
+				---
+
+				# Neovim을 키는 과정 
+
+				* **Step 1 : 터미널 에뮬레이터를 킨다 (iterm, konsole, wezterm, ...)**
+				* Step 2 : 명령어를 타이핑할 수 있는 쉘이 열린다. (zsh, bash)
+				* Step 3 : 작업하고자 하는 프로젝트의 경로를 찾아간다. (cd xxxx)
+				* Step 4 : 현재 위치한 경로를 nvim 커맨드로 연다. (nvim .)
+
+				---
+
+				# Wezterm 
+
+				* GPU 가속을 지원하는 터미널 에뮬레이터
+				* neovim처럼 **lua로 커스터마이징**이 가능
+
+				---
+
+				# Wezterm (배경 투명도 조절)
+
+				* For UI 작업하는 빈도가 잦은 개발자
+				* 모니터를 분할해서 사용하는 것이 국룰 (Web Browser / IDE)
+				  * 하지만... 밖에서 작업한다면? 모니터 하나로만 작업해야한다면?
+
+				---
+
+				# Wezterm (배경 투명도 조절)
+
+				* 요즘 시대엔.. **HMR(Hot Module Reloading)** 이라는 게 있다.....
+				  * 소스코드를 편집하면 브라우저에 바로 변경사항이 반영됨
+				* 배경 투명도 조절이 되는 터미널과 함께라면? 
+				  * **브라우저 창 위에 터미널 창을 띄워서 작업**할 수 있다. 
+				  * 터미널에서 편집 시, 백그라운드의 브라우저에 변경사항이 즉시 반영
+
+				---
+
+				# Wezterm (배경 투명도 조절)
+
+				!!!!!! 투명도 조절 적용된 스크린샷
+
+				---
+				
+				# Wezterm (탭 이름 변경하기)
+
+				* A 프로젝트 / B 프로젝트 / 저널링 / 블로그
+				* 불가피하게 여러개의 작업 환경으로 멀티태스킹 해야할 때...
+				* 내가 어떤 환경을 작업하고 있는지 신경쓰는 **인지부하**를 줄여줌
+
+				---
+
+				# Wezterm (탭 이름 변경하기)
+
+				!!!! 탭 이름 변경화면 첨부하기
+
+				---
+
+				# Neovim을 키는 과정 
+
+				* Step 1 : 터미널 에뮬레이터를 킨다 (iterm, konsole, wezterm, ...)
+				* Step 2 : 명령어를 타이핑할 수 있는 쉘이 열린다. (zsh, bash)
+				* **Step 3 : 작업하고자 하는 프로젝트의 경로를 찾아간다. (cd xxxx)**
+				* Step 4 : 현재 위치한 경로를 nvim 커맨드로 연다. (nvim .)
+
+				---
+
+				# Tmux 
+
+				* 터미널 세션을 좀 더 가성비있게 쥐어짜낼 수 있는 CLI 도구 
+				  * **Session** / **Window** / **Pane**
+				* **다중 작업 관리** - 하나의 **Session** 안에서 여러개의 **Window**로 분할
+				* **창 분할** - **Window** 내부의 **Pane**을 수직/수평으로 분할
+				  * **수직 분할** - **Ctrl+b** + **%**
+				  * **수평 분할** - **Ctrl+b** + **"** 
+				* **분할된 pane간 이동** - **Ctrl+b** + **(h/j/k/l)**
+
+				---
+
+				# Tmuxinator 
+
+				* yaml 설정 파일을 통해, **프로젝트별로 tmux 세션을 관리**
+				* yaml 파일에 tmux 세션이 띄워지는 조건을 선언 후, **tmuxinator start xxxx(프로젝트 이름)** 명령어로 실행
+				  * tmux session에서 표시되는 프로젝트의 이름
+				  * **어느 디렉토리**를 기준으로 스크립트를 실행하는지 (pwd)
+				  * **각각의 window 마다 어떤 프로세스를 띄울지** (혹은 어떤 환경변수를 세팅할지)
+				  * **각각의 window를 어떻게 분할할지**
+				* yaml 파일을 파라미터로 넘겨줄때는 **tmuxinator start -p xyz.yml** 
+
+				---
+
+				# Tmuxinator
+
+				!!!!! ps -ef 명령어를 실행했을때 어떻게 띄우는지 스크린샷 첨부하기
+
+				---
+
+				# Tmuxinator 
+
+				* Wezterm과 역할을 의도적으로 분리 
+				* **Tmuxinator** : 한 프로젝트를 작업하는데 필요한 모든 프로세스
+				  * **작업 단위, 프로세스 단위 분리**
+				  * 백엔드 / 프론트엔드 / 서버 프로세스(localhost) + 빌드 스크립트
+				* **Wezterm**
+				  * **워크스페이스 단위의 분리**
+				  * A 프로젝트 / B 프로젝트 / 저널링,TIL / 블로그
+
+				---
+
+				# Tmuxinator 실행 화면
+
+				!!!!! wezterm / tmuxinator 같이 설명이 필요함
+
+				---
+
+				# Neovim을 키는 과정 
+
+				* Step 1 : 터미널 에뮬레이터를 킨다 (iterm, konsole, wezterm, ...)
+				* **Step 2 : 명령어를 타이핑할 수 있는 쉘이 열린다. (zsh, bash)**
+				* Step 3 : 작업하고자 하는 프로젝트의 경로를 찾아간다. (cd xxxx)
+				* Step 4 : 현재 위치한 경로를 nvim 커맨드로 연다. (nvim .)
+
+				---
+
+				# Neovim의 Terminal 모드
+
+				* Neovim 버퍼 안에서... 터미널을 띄울 수 있다고...?
+				* Command 모드의 한계
+				  * 실시간 상호작용이 포함되는 CLI 툴을 사용하기 어려움 (Github CLI)
+
+				---
+
+				# Neovim의 Terminal 모드 
+
+				* 터미널 명령어 사용하는게 불가피할때 좀 더 높은 자유도를 제공해줌
+				* 터미널 에뮬레이터에서 CLI 명령어를 실행하기 위해 탭을 따로 띄울 필요가 없음
+				  * **Neovim 인스턴스의 버퍼 안에서 해결하면 그만**이니까!
+				* **alias 세팅해놓은 것도 잘 먹힘**
+				* **상호작용이 필요한 CLI 프로그램**도 잘 돌아감. 
+				  * Github CLI, ssh, flutter build, terraform, ...
+
+				---
+
+				# Github CLI Copilot (inside Neovim)
+
+				!!!!! Github CLI Copilot 실행화면
+
+				</section>
+				
 				<section data-markdown>
 				# Chapter 4
 				# 나만의 맞춤형 환경 구성하기
