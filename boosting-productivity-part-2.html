@@ -389,6 +389,228 @@
 				# Chapter 4
 				# 나만의 맞춤형 환경 구성하기
 				</section>
+				<section data-markdown data-separator="^\n---\n$" data-chapter-context="Chapter 4 : 나만의 맞춤형 환경 구성하기" data-transition="fade">
+				
+				# 저의 dotfiles를 소개합니다
+
+				* Timeslot Alarm
+				* Prompt engineering
+				* Switching Theme
+
+				---
+
+				# 저의 dotfiles를 소개합니다
+
+				* **Timeslot Alarm**
+				* Prompt engineering
+				* Switching Theme
+
+				---
+
+				# Timeslot Alarm
+
+				* context - **오늘, 또 일을 미루고 말았다** (**나카지마 사토시**/북클라우드)
+
+				!!!! 책표지
+
+				---
+
+				# Timeslot Alarm 
+
+				* 컨텍스트 스위칭이 빈번하게 일어나면 생산성이 나빠질 수 밖에 없다고 강조함
+				  * A 작업 20분 > B 작업 20분 > C 작업 20분 > ... (3번 반복) 
+				    * **컨텍스트 스위칭 대략 9회**
+				  * A 작업 60분 > B 작업 60분 > C 작업 60분 
+				    * **컨텍스트 스위칭 2회**
+				* 멀티태스킹이 불가피하다면, 시간을 **적당한 블록 단위로 분할**
+
+				---
+
+				# Timeslot Alarm 
+
+				!!!! 마스토돈에 올린 이미지 첨부 
+
+				---
+
+				# Timeslot Alarm 
+
+				!!!! 소스코드 첨부 
+
+				---
+
+				# Timeslot Alarm
+
+				!!!! 실행되는 화면 스크린샷
+
+				---
+
+				# 저의 dotfiles를 소개합니다
+
+				* Timeslot Alarm
+				* **Prompt engineering**
+				* Switching Theme
+
+				---
+
+				# Prompt engineering
+
+				* 커밋 메시지를 자동생성하기 
+				* 커밋 메시지 수정 
+				* 브라우저 안 키고, ChatGPT 띄우기 
+
+				---
+
+				# Prompt engineering (커밋 메시지 생성)
+
+				**:InjectCommitMessage**
+				
+				**프롬프트**
+				* **75자 이내의 짧고 간단한 git commit 메시지**를 작성해주세요. 
+				* 변경사항은 **git diff --cached**와 같습니다. 
+
+				---
+
+				# Prompt engineering (커밋 메시지 수정)
+
+				**`:'<,'>TextifyCommitMessage`**
+				
+
+				**프롬프트**
+				* 여기에 적어놓은 커밋 메시지가 문법적으로 불완전합니다. 
+				* 이 메시지를 **좀 더 가독성 있고, 명확하게** 고쳐주세요.
+				* **75자 이내의 짧고 간단한 git commit 메시지**를 작성해주세요.
+				* 변경사항은 **git diff --cached**와 같습니다. 
+
+				---
+
+				# Prompt engineering (ChatGPT)
+
+				* ChatGPT : 무한정으로 대화를 주고받을 수 있음
+				* OpenAI API : Context length limit
+
+				!!!! ChatGPT
+
+				---
+
+				# 저의 dotfiles를 소개합니다
+
+				* Timeslot Alarm
+				* Prompt engineering
+				* **Switching Theme**
+
+				---
+
+				# Switching Theme
+
+				* 풀스택 개발자라면 멀티태스킹하는건 불가피한 일...
+				* 백엔드 / 프론트엔드 / 백오피스, 번갈아가면서 작업하는 일이 잦음
+				* 시각적으로도 **어떤 부분을 작업하고 있는지 명확한 구분이 필요**했음.
+				  * 미세하게 인지부하를 줄이기
+
+				---
+
+				# Switching Theme
+
+				![nordic](https://private-user-images.githubusercontent.com/2427963/271760074-b6f626c8-5769-4248-84dc-0e69a24d4a1d.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE3MDI3MzU5MjksIm5iZiI6MTcwMjczNTYyOSwicGF0aCI6Ii8yNDI3OTYzLzI3MTc2MDA3NC1iNmY2MjZjOC01NzY5LTQyNDgtODRkYy0wZTY5YTI0ZDRhMWQucG5nP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQUlXTkpZQVg0Q1NWRUg1M0ElMkYyMDIzMTIxNiUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyMzEyMTZUMTQwNzA5WiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9Y2Q5MTY2Y2VkMGZiOWU0YmMxNzBmZTFkMmUzMzkxZTIzZWE2NDgyZTYwYzFjOTVmMTI3YTBhNGNhNDYwYTlhNyZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QmYWN0b3JfaWQ9MCZrZXlfaWQ9MCZyZXBvX2lkPTAifQ.9XHDEXCUgAfMyjKrSyHsumROiygXdRo3eknITrXomPg)
+
+				---
+
+				# Switching Theme 
+
+				![Tokyonight](https://private-user-images.githubusercontent.com/2427963/271760076-e4642b30-dd33-4137-b58d-113dbecef5e1.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE3MDI3MzU5MjksIm5iZiI6MTcwMjczNTYyOSwicGF0aCI6Ii8yNDI3OTYzLzI3MTc2MDA3Ni1lNDY0MmIzMC1kZDMzLTQxMzctYjU4ZC0xMTNkYmVjZWY1ZTEucG5nP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQUlXTkpZQVg0Q1NWRUg1M0ElMkYyMDIzMTIxNiUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyMzEyMTZUMTQwNzA5WiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9MTA1ZTI2OGU5YjdmNWYzNTRkMzk0YmQ5MGM4Yjk2MTA5NzE5YzViNDI5MTMwMzg0NzZkZGY2NDJmNGU5YTY3NCZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QmYWN0b3JfaWQ9MCZrZXlfaWQ9MCZyZXBvX2lkPTAifQ.-56s_qRM06_2SYDpUftvXklc1k1Dq_a7sY90p3N4Lu4)
+
+				---
+
+
+				# Switching Theme 
+
+				![Catppuccin](https://private-user-images.githubusercontent.com/2427963/271760077-885f91a7-ec91-455f-af9f-9271b13777c9.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE3MDI3MzU5MjksIm5iZiI6MTcwMjczNTYyOSwicGF0aCI6Ii8yNDI3OTYzLzI3MTc2MDA3Ny04ODVmOTFhNy1lYzkxLTQ1NWYtYWY5Zi05MjcxYjEzNzc3YzkucG5nP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQUlXTkpZQVg0Q1NWRUg1M0ElMkYyMDIzMTIxNiUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyMzEyMTZUMTQwNzA5WiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9M2E4OGZjMjY4ZTg0ZTJlMzQ4ZWQ0ZTg5ZDcyOGVjZjc0NTY0OTMxYTgyODY1NjAzOTVhYmYwNmQyMmFjNGQyMSZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QmYWN0b3JfaWQ9MCZrZXlfaWQ9MCZyZXBvX2lkPTAifQ.Q1xtJd_CfB96XZiuW9HF0166F22smNmmHoZhP73MZ3k)
+
+				---
+
+				# Switching Theme 
+
+				![Melange](https://private-user-images.githubusercontent.com/2427963/271760079-3e587f52-68ac-41ab-8557-8c426acf0776.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE3MDI3MzU5MjksIm5iZiI6MTcwMjczNTYyOSwicGF0aCI6Ii8yNDI3OTYzLzI3MTc2MDA3OS0zZTU4N2Y1Mi02OGFjLTQxYWItODU1Ny04YzQyNmFjZjA3NzYucG5nP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQUlXTkpZQVg0Q1NWRUg1M0ElMkYyMDIzMTIxNiUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyMzEyMTZUMTQwNzA5WiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9NjI0ZDY5N2ZkMTc2ZTNkYzA0NTMzNmUyNjUzYTg0MGQ4OWMwYjEzYjVkMTFhMDk1MjgwMTY4N2ZlZjk0NTZkNSZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QmYWN0b3JfaWQ9MCZrZXlfaWQ9MCZyZXBvX2lkPTAifQ.VF9BtZKm48rH7_kM9A5OyW7O0FiMq91srX8h_wIgWn8)
+
+				---
+
+				# Switching Theme
+
+				* Neovim 프로세스를 키기 전에 환경변수로 어떤 Theme를 쓸 지 선언 
+				* Neovim 프로세스가 띄워지면, 어떤 Theme를 사용할지 런타임에서 결정
+
+				```lua 
+				local current_theme = os.getenv("NEOVIM_THEME")
+
+				local available_themes = {}
+				for _, theme in ipairs({
+					"melange",
+					"catppuccin",
+					"tokyonight",
+					"nordic",
+				}) do
+					available_themes[theme] = true
+				end
+
+				if current_theme == nil then 
+					vim.cmd.colorscheme("melange")
+				elseif available_themes[current_theme] ~= nil then
+					vim.cmd.colorscheme(current_theme)
+				else
+					vim.cmd.colorscheme("melange")
+				end
+
+				```
+
+				---
+
+				# Switching Theme
+
+				이제 이걸 tmuxinator에다가 응용해볼까요?
+
+
+				```yaml
+				# Tmuxinator configuration for Memedex project Application
+
+				name: memedex
+				root: ~/projects/
+
+				windows:
+				  - backend:
+					  layout: main-vertical
+					  panes:
+						- cd ./memedex-api/ && export NEOVIM_THEME=melange && vim .
+				  - frontend:
+					  layout: main-vertical
+					  panes:
+						- cd ./memedex-front/ && export NEOVIM_THEME=tokyonight && vim .
+				  - backoffice:
+					  layout: main-vertical
+					  panes:
+						- cd ./memedex-backoffice/ && export NEOVIM_THEME=nordic && vim .
+				  - debugging:
+					  layout: main-vertical
+					  panes:
+						- cd ./memedex-api/ && export IS_MARIADB_DOCKERIZED=true && poetry run python manage.py runserver
+						- export TOSS_CLIENT_KEY=test_ck_xxxxxxxx && cd ./memedex-front/ && yarn dev
+						- export TOSS_CLIENT_KEY=test_ck_xxxxxxxx && cd ./memedex-backoffice/ && yarn dev
+						- cd ./memedex-api/ && export IS_MARIADB_DOCKERIZED=true && poetry run python manage.py shell
+						- cd ./memedex-api/ && docker-compose up
+				```
+
+				</section>
+				<section data-markdown>
+				# 마무리
+				</section>
+				<section data-markdown data-chapter-context="-">
+				# 마무리 
+
+
+
+				</section>
+				<section data-markdown>
+				# 감사합니다
+				</section>
 
 			</div>
 
