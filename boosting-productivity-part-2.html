@@ -101,59 +101,148 @@
 				<section data-markdown data-separator="^\n---\n$" data-chapter-context="Chapter 1 : 의미론 단위로 많은 일들을 쳐내기">
 				# 우리는 일을 어떻게 처리하는가?
 
-				* 흠냐륑
+				먼저 우리가 소스코드를 편집할 때 하는 행동들을 atmoic하게 쪼개봅시다. 
+
+				* **Read** : 우리가 계속 개발하면서 인식 체계에 정보가 전달되는 것
+				  * 커서의 위치, 프로젝트의 전반적인 아키텍쳐(디렉토리 구조), diagnostics
+				* **Write** : 소스코드를 작성하기 위해서 커서가 위치한 곳에 글자를 삽입 
+				  * Input mode, paste, snippet, replace
+				* **Move** : 커서를 이동 (h/j/k/l/w/W/e/E/f/F/%/gg)
+				* **Select** : 영역을 선택 (마우스로 드래그 or Visual 모드에서 커서를 이동)
+				* **Delete** : 삭제 (backspace, Delete)
 
 				---
 
-				# 의미론 단위의 일을 쳐내기 
+				# 우리는 일을 어떻게 처리하는가?
 
-				* 읽어보면 좋은 글 
-				  * Typing fast is about latency, not throughput
-
-				</section>
-				<section data-markdown data-separator="^\n---\n$" data-chapter-context="Chapter 1 : 의미론 단위로 많은 일들을 쳐내기">
-				# Shortcut / Keymap
-
-				* 특정 동작을 **단순한 키 조작** 만으로도 가능하게 하는 것.
-				* 단축키 vs 키맵 
-				  * 단축키 (VSCode / IntelliJ) 
-				    * (Super / Alt / Ctrl / Shift 를 동시에 입력) + 그 외의 다른 키
-				  * keymap - 단축키 뿐만이 아닌 연속된 n개의 키 조합 + Context
+				* 우리는 정보를 인식하고, 그 정보를 기반으로 어떻게 행동할지를 결정. 
+				* 어떤 단위적인 작업을 하던, 시간은 똑같이 흐른다. 
+				  * keystroke를 타이핑하는 동안에도 
+				  * 키보드에서 마우스로 손목이 옮겨가는 동안에도
+				  * 마우스를 움직이는 동안에도
+				* 어떤 덩어리 단위의 작업을 한다면, **덩어리 단위의 작업을 하는데 드는 속도를 최적화**할 수 있지 않을까?
+				  * 프로그램으로 치면 **인스트럭션의 실행 횟수**를 줄이는 것
 
 				---
 
-				# Shortcut / Keymap
+				# 그렇다면 어떻게 최적화하지?
 
-				* Vim에서의 keymap 
-				  * 대부분의 경우에는 **mode (n / v / i)** + 여러번의 키 조합
+				* Read 과정에서 생기는 **인지부하**를 줄이기 
+				  * Syntax highlighting 
+				  * docstring 안에 작성된 샘플코드의 syntax highlighting 
+				* **컨텍스트 스위칭 비용** 줄이기 
+				  * Read -> Move -> Write -> Read -> Move -> Delete -> ... 
+				  * 가능하면 Context를 왔다갔다하는 시간을 줄여야 함
+				  * ex. 커서가 올바른 위치에 있나? 충분히 삭제를 했나? 
+				* **적은 수의 keystroke**로 많은 일을 하도록 만들기 **(머슬메모리)**
+				  * Repetition, Keymap, Snippet, Macro, DSL
+
+				---
+
+				# 의미론 단위의 일을 쳐내기 (1)
+
+				* 적당한 단위의 작업을 처리하는 방식을 단순화된 형태로 내재화하는 것
+				* 기초 
+				  * 단어 단위로 커서를 점프 **w**, 오른쪽/왼쪽 방향으로 글자 탐색 **F**/**f**
+				  * 239번 라인으로 이동 **:239** (stacktrace를 근거로 오류 원인 분석)
+				* 응용
+				  * 괄호 안의 글자를 비우기 
+				  * 선택한 영역에 있는 특정 패턴을 다른 패턴으로 치환하기
+				  * 클래스/함수/모듈의 정의를 클립보드에 복사하기
+
+				---
+
+				# 의미론 단위의 일을 쳐내기 (2)
+
+				* 괄호 안의 글자를 비우기 
+				  * VSCode -- **마우스 드래그 + backspace**, 혹은 backspace 여러번
+				  * Vim -- **ci[**, **ci(**, **ci{**, **ci"** (text object) 
+				* 선택한 영역에 있는 특정 패턴을 다른 패턴으로 치환하기
+				  * Vim -- **:'<,'>s/pattern/target/g** (Visual mode)
+
+				---
+
+				# 의미론 단위로 일을 쳐내기 (3)
+
+				* 클래스/함수/모듈의 정의를 클립보드에 복사하기 
+				  * VSCode -- **마우스로 드래그**하면서 **스크롤** 내리고, **Ctrl+C** 입력
+				  * Vim (Visual mode) -- **머슬 메모리가 함께라면 엄청 빠름**
+				    * 커서를 정의 부분으로 옮긴다. (**검색**) ex. **/function_name**
+					* 커서를 행의 맨끝으로 옮긴다. (**$**) 
+					* 커서가 가리키는 괄호의 짝이 맞는 부분으로 커서를 이동한다 (**%**)
+					* 클립보드 복사 (**:'<'>w! pbcopy**)
+
 
 				</section>
-
 				<section data-markdown data-separator="^\n---\n$" data-chapter-context="Chapter 1 : 의미론 단위로 많은 일들을 쳐내기">
 				# Snippet
 
-				* 방대한 양의 반복적인 작업을 
-				* 자동화된 코드 
+				* 방대하고 반복적인 코드를 최소한의 타이핑으로 빠르게 찍어내기
+				* verbose한 코드를 작성하는 것에서 생기는 인지부하를 최소화
+				* TextMate 표준 / LuaSnip / Ultisnips
 
 				---
 
-				# Snippet (Case study : tailwind)
+				# Snippet (ex. html) 
 
-				* 문제 정의 : CSS 속성을 어떻게 입히지?
+				* Emmet : HTML 마크업을 빠르게 찍어낼 수 있게 해줌
+
+				```html
+				&lt;!-- body#slides&gt;section.slide*7 --&gt;
+
+
+
+
+				&lt;body id="slides"&gt;
+					&lt;section class="slide"&gt;&lt;/section&gt;
+					&lt;section class="slide"&gt;&lt;/section&gt;
+					&lt;section class="slide"&gt;&lt;/section&gt;
+					&lt;section class="slide"&gt;&lt;/section&gt;
+					&lt;section class="slide"&gt;&lt;/section&gt;
+					&lt;section class="slide"&gt;&lt;/section&gt;
+					&lt;section class="slide"&gt;&lt;/section&gt;
+				&lt;/body&gt;
+				```
 
 				---
 
-				# Snippet (Case study : Flutter)
+				# Snippet (ex. flutter)
 
-				* 문제 정의 : 어떻게 하면 컴포넌트를 빠르게 찍어내지?
+				* stl 
+
+				```dart
+				class MyApp extends StatelessWidget {
+				  const MyApp({Key? key}) : super(key: key);
+				 
+				  @override
+				  Widget build(BuildContext context) {
+					return Container();
+				  }
+				}
+				```
 
 				---
 
-				# Snippet 직접 만들기 
+				# Snippet (ex. flutter)
 
-				* TextMate 표준 스니펫 
-				* LuaSnip 
-				* VimSnippet
+				* stf
+
+				```dart 
+				class MyApp extends StatefulWidget {
+				  const MyApp({Key? key}) : super(key: key);
+				 
+				  @override
+				  // ignore: library_private_types_in_public_api
+				  _MyAppState createState() => _MyAppState();
+				}
+				 
+				class _MyAppState extends State&lt;MyApp&gt; {
+				  @override
+				  Widget build(BuildContext context) {
+					return Container();
+				  }
+				}
+				```
 
 				---
 
