@@ -140,6 +140,10 @@ section.has-light-background, section.has-light-background h1, section.has-light
   max-height: 95%;
 }
 
+.reveal img {
+  max-height: 50vh !important
+}
+
 .reveal strong,
 .reveal b {
   font-weight: bold;
