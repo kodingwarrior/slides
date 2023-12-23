@@ -142,6 +142,7 @@ section.has-light-background, section.has-light-background h1, section.has-light
 
 .reveal img {
   max-height: 50vh !important
+  margin: 0 auto;
 }
 
 .reveal strong,
